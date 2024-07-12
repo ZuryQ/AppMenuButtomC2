@@ -14,7 +14,7 @@
         app:titleTextColor="@color/miColor"
         app:subtitleTextColor="@color/miColor"
         app:title="Filtrar alumnos"
-        android:background="@color/header"/>
+        android:background="@color/barra"/>
 
     <!-- Scrollable container with specified height -->
     <ScrollView
@@ -49,7 +49,19 @@
                     />
             </ScrollView>
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="80dp"
+                android:backgroundTint="@color/miColor"
+                android:src="@mipmap/add_person"
+                app:borderWidth="2dp"
+                app:elevation="3dp"
 
+                />
 
 
         </LinearLayout>
@@ -61,17 +73,5 @@
         android:layout_height="match_parent">
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="80dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/miColor"
-        android:src="@mipmap/add_person"
-        app:borderWidth="2dp"
-        app:elevation="3dp"
 
-        />
 </FrameLayout>

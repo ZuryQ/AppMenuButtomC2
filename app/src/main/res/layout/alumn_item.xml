@@ -55,7 +55,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="@string/alumno"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -67,26 +67,27 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="Ing. Tec. Información"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/txtMatricula"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
-                android:layout_marginRight="6dp"
-                android:text="2021030115"
-                android:textSize="12sp"
-                android:textStyle="bold"
+                android:layout_width="94dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="36dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="@color/white"
+                android:text="2021030115"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintHorizontal_bias="0.411"
+                app:layout_constraintStart_toEndOf="@+id/lineLay"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

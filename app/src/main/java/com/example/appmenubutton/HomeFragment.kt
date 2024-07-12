@@ -1,5 +1,7 @@
 package com.example.appmenubutton
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Html
 import android.text.method.LinkMovementMethod
@@ -7,7 +9,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,8 +28,37 @@ class HomeFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    fun onIconClick(view: View) {
+        val url = when (view.id) {
+            R.id.whatsapp_icon -> "https://wa.me/6692256329"
+            R.id.instagram_icon -> "https://www.instagram.com/irvingzq_/"
+            R.id.linkedin_icon -> "https://www.linkedin.com/in/irvingquintero/"
+            else -> ""
+        }
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        try {
+            context?.let {
+                startActivity(intent)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(context, "No se pudo abrir el enlace", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<ImageView>(R.id.whatsapp_icon).setOnClickListener { onIconClick(it) }
+        view.findViewById<ImageView>(R.id.instagram_icon).setOnClickListener { onIconClick(it) }
+        view.findViewById<ImageView>(R.id.linkedin_icon).setOnClickListener { onIconClick(it) }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)

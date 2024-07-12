@@ -20,7 +20,7 @@
             app:titleTextColor="@color/miColor"
             app:subtitleTextColor="@color/miColor"
             app:title="Filtrar alumnos"
-            android:background="@color/header"/>
+            android:background="@color/barra"/>
 
         <!-- Content area with padding -->
         <LinearLayout

@@ -32,7 +32,9 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/button_menu"
+        app:backgroundTint="@color/barra"
         app:itemIconSize="30dp"
-        app:itemTextColor="@color/miColor"/>
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

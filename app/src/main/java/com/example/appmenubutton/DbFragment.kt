@@ -45,8 +45,10 @@ class DbFragment : Fragment(R.layout.fragment_db) {
         }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         btnGuardar = view.findViewById(R.id.btnGuardar)
         btnBuscar = view.findViewById(R.id.btnBuscar)
