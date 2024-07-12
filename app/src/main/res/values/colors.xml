@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#424242</color> <!-- Dark Gray -->
+    <color name="white">#FFFFFF</color> <!-- Pure White -->
+    <color name="grey">#9E9E9E</color> <!-- Light Gray -->
+    <color name="fondo">#F5F5F5</color> <!-- Very Light Gray -->
+    <color name="barra">#EEEEEE</color> <!-- Medium Gray -->
+    <color name="header">#E0E0E0</color> <!-- Lighter Gray -->
+    <color name="miColor">#7d7f7d</color> <!-- Deep Purple -->
+    <color name="blueLink">#03A9F4</color> <!-- Light Blue -->
+
+    <color name="your_normal_color">#FF5722</color> <!-- Deep Orange for normal state -->
+    <color name="your_pressed_color">#E64A19</color> <!-- Darker shade of deep orange for pressed state -->
+    <color name="your_focused_color">#FF8A65</color> <!-- Lighter shade of deep orange for focused state -->
+    <color name="your_disabled_color">#BDBDBD</color> <!-- Light gray for disabled state -->
+
+    <color name="your_ripple_color">#4CAF50</color> <!-- Green for ripple effect -->
+    <color name="button_color">#FF9800</color> <!-- Orange color for the button -->
+    <color name="ripple_color">#FFCC80</color> <!-- Lighter shade of orange for the ripple effect -->
+
+    <color name="primaryColor">#fffacd</color> <!-- Primary color -->
+    <color name="primaryDarkColor">#512DA8</color> <!-- Darker shade of primary color -->
+    <color name="onPrimaryColor">#FFFFFF</color> <!-- Text color on primary color -->
+    <color name="secondaryColor">#7d7f7d</color> <!-- Secondary color -->
+    <color name="secondaryDarkColor">#E64A19</color> <!-- Darker shade of secondary color -->
+    <color name="onSecondaryColor">#000000</color> <!-- Text color on secondary color -->
+    <color name="backgroundColor">#FFFFFF</color> <!-- Background color -->
+    <color name="hintColor">#9E9E9E</color> <!-- Hint text color -->
+</resources>
