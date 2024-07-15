@@ -2,6 +2,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.ArrayAdapter
+import android.widget.Filter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -13,7 +14,8 @@ class ListFragment : Fragment() {
 
     private lateinit var listView: ListView
     private lateinit var arrayList: ArrayList<String>
-    private lateinit var adapter: CustomArrayAdapter
+    private lateinit var filteredList: ArrayList<String>
+    private lateinit var adapter: ArrayAdapter<String>
     private lateinit var toolbar: Toolbar
     private lateinit var searchView: SearchView
 
@@ -40,10 +42,40 @@ class ListFragment : Fragment() {
 
         // Populate list items
         val items = resources.getStringArray(R.array.alumnos)
-        arrayList = ArrayList()
-        arrayList.addAll(items)
+        arrayList = ArrayList(items.toList())
+        filteredList = ArrayList(arrayList)
 
-        adapter = CustomArrayAdapter(requireContext(), arrayList)
+        adapter = object : ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, filteredList) {
+            override fun getFilter(): Filter {
+                return object : Filter() {
+                    override fun performFiltering(constraint: CharSequence?): FilterResults {
+                        val filterResults = FilterResults()
+                        if (constraint.isNullOrEmpty()) {
+                            filterResults.values = arrayList
+                            filterResults.count = arrayList.size
+                        } else {
+                            val queryParts = constraint.toString().lowercase().trim().split("\\s+".toRegex())
+                            val results = arrayList.filter { item ->
+                                queryParts.all { queryPart ->
+                                    item.lowercase().contains(queryPart)
+                                }
+                            }
+                            filterResults.values = results
+                            filterResults.count = results.size
+                        }
+                        return filterResults
+                    }
+
+                    override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                        if (results != null && results.values is List<*>) {
+                            filteredList.clear()
+                            filteredList.addAll(results.values as List<String>)
+                            notifyDataSetChanged()
+                        }
+                    }
+                }
+            }
+        }
         listView.adapter = adapter
 
         // Handle item click
